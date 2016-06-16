@@ -1,6 +1,6 @@
 $black: #151515;
 $blue: #007eff;
-$dark-green: #007012;
+$dark-green: #017e00;
 $green: #8aeb00; 
 $white: #fcfcfc;
 
@@ -14,7 +14,7 @@ $small: max-width 767px;
 @import 'breakpoint';
 
 $cone-height: 42;
-$cone-angle: 32;
+$cone-angle: 40;
 
 /*
  * Globals
@@ -58,8 +58,8 @@ $cone-angle: 32;
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 700;
-  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(../fonts/Montserrat-Bold.woff) format('woff');
+  font-weight: 900;
+  src: local('Montserrat Black'), local('Montserrat-Black'), url(../fonts/Montserrat-Black.woff) format('woff');
 }
 
 /* Links */
@@ -144,7 +144,7 @@ body {
   text-transform: uppercase;
   border: 3px solid #{$dark-green};
   padding: 1em 0em 0.9em 0em;
-  font-size: 1.2em;
+  //font-size: 1.2em;
   font-weight: bold;
   border-radius: 6px;
   margin-top: 2em;
@@ -170,7 +170,7 @@ body {
     border-color: transparent transparent $green transparent;
     border-width: 0 #{$cone-height}vw #{$cone-angle}vw #{$cone-height}vw;
     background-color: $dark-green;
-    margin-bottom: -14vw;
+    margin-bottom: -10vw;
     }
     &::after {
   content: "";
@@ -425,7 +425,7 @@ body {
  * Background section
  */
 .background-section {
-  padding-top: 30px;
+  padding-top: 0.8em;
   position: relative;
   .action-button {
     position: relative;
@@ -435,6 +435,9 @@ body {
       a {
         text-decoration: none;
         padding: 15px;
+          @include breakpoint($medium) {
+            font-size: 1.2em;
+          }
       }
   }
   p {
@@ -602,6 +605,14 @@ body {
       }
       text-align: left;
     }
+  }
+}
+
+
+.codeblock {
+  text-align: left !important;
+  pre {
+    text-align: left !important;
   }
 }
 
